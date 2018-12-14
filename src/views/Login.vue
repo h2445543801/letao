@@ -36,12 +36,13 @@ export default {
     methods:{
         login(){
            Login(this.loginForm).then(res => {
-               console.log(res);
+            //    console.log(res);
                if(res.success ){
                    this.$message({
                     message: '恭喜你,成功登入',
                     type: 'success'
                     });
+                    this.$router.push({name:'Home'})
                }else{
                    this.$message({
                     message: '警告,输入有误',
