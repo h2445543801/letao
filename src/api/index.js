@@ -23,9 +23,23 @@ export const UserList = (params) => {
     })
 }
 
-// 用户管理
+// 用户状态
 export const UserStatus = (params) => {
     return axios.post('/user/updateUser',params)
+    .then((result) => {
+        return result.data
+    })
+}
+//一级分类
+export const classifyList = (pa) => {
+    return axios.get('/category/queryTopCategoryPaging',{params:pa})
+    .then((result) =>{
+        return result.data
+    })
+}
+//一级分类新增
+export const classifyForm = (params) => {
+    return axios.post('/category/addTopCategory',params)
     .then((result) => {
         return result.data
     })

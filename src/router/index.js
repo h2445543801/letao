@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Login from '@/views/Login.vue'
 import Home from '@/views/Home.vue'
 import User from '@/views/user/User.vue'
+import Classify from '@/views/classify/Classify.vue'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
           path:'/user',
           name:'User',
           component:User
+        },
+        {
+          path:'/classify',
+          name:'Classify',
+          component:Classify
         }
       ]
     }

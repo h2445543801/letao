@@ -25,7 +25,7 @@
               <span>分类管理</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="2-1">
+              <el-menu-item index="classify">
                 <i class="el-icon-menu"></i>
                 <span>一级分类管理</span>
               </el-menu-item>
