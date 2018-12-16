@@ -11,3 +11,11 @@ export const Login = (params) => {
         return result.data
     })
 }
+
+// 用户管理
+export const UserList = (params) => {
+    return axios.get('/user/queryUser',params)
+    .then((result) => {
+        return result.data
+    })
+}
