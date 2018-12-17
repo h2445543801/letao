@@ -4,6 +4,7 @@ import Login from '@/views/Login.vue'
 import Home from '@/views/Home.vue'
 import User from '@/views/user/User.vue'
 import Classify from '@/views/classify/Classify.vue'
+import Reclassify from '@/views/classify/Reclassify.vue'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
           path:'/classify',
           name:'Classify',
           component:Classify
+        },
+        {
+          path:'/reclassify',
+          name:'Reclassify',
+          component:Reclassify
         }
       ]
     }

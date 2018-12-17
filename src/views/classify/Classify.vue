@@ -31,6 +31,14 @@
                 <el-button type="primary" @click="addSubmit">确 定</el-button>
             </div>
         </el-dialog>
+        <!-- 分页 -->
+        <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :page-size="pageSize"
+        layout="total, prev, pager, next"
+        :total="total">
+        </el-pagination>
     </div>
 </template>
 <script>
@@ -41,6 +49,7 @@ export default {
             classifyList:[],
             page:1,
             pageSize:10,
+            total:0,
             adddialogFormVisible:false,
             addform:{
                 categoryName:''
@@ -52,11 +61,15 @@ export default {
             classifyList({page:this.page,pageSize:this.pageSize}).then(res => {
                 // console.log(res,'999');
                 this.classifyList = res.rows
+                this.total = res.total
+                this.pageSize = res.size
+
             })
         },
         addClassify(){
             this.adddialogFormVisible = true
         },
+        // 添加分类
         addSubmit(){
             classifyForm(this.addform).then(res => {
                 // console.log(res,'9999');
@@ -64,8 +77,20 @@ export default {
                 if(res.success){
                     this.addform.categoryName = this.classifyList.categoryName
                     this.init()
+                     this.$message({
+                        message:'添加成功',
+                        type:'success'
+                    })
                 }
             })
+        },
+        handleSizeChange(val){
+            // console.log(123);
+        },
+        handleCurrentChange(val){
+            // console.log(val,'2231');
+            this.page = val
+            this.init()
         }
         
     },

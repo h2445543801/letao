@@ -70,7 +70,7 @@ export default{
     },
     methods:{
         userStatus(id,row){
-            // console.log(row,'2222');
+            console.log(row,'2222');
             this.toggleStatus = !this.toggleStatus
             // console.log(this.toggleStatus,'123333');
             if(this.toggleStatus){

@@ -29,7 +29,7 @@
                 <i class="el-icon-menu"></i>
                 <span>一级分类管理</span>
               </el-menu-item>
-              <el-menu-item index="2-2">
+              <el-menu-item index="reclassify">
                 <i class="el-icon-menu"></i>
                 <span>二级分类管理</span>
               </el-menu-item>

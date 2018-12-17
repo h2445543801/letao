@@ -44,3 +44,17 @@ export const classifyForm = (params) => {
         return result.data
     })
 }
+//二级分类
+export const ReclassifyList = (pa) => {
+    return axios.get('/category/querySecondCategoryPaging',{params:pa})
+    .then((result) =>{
+        return result.data
+    })
+}
+//二级分类新增
+export const addClassify = (params) => {
+    return axios.post('/category/addSecondCategory',params)
+    .then((result) => {
+        return result.data
+    })
+}
